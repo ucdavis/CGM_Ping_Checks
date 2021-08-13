@@ -1,6 +1,6 @@
 ## CGM Ping Checks
 
-A fun project to check the availabilty status of various system. If a system fails a configured amount of checks then it will be added to the list of systems to report on via email notification from an Office365 account.
+A fun project to check the availability status of various systems. If a system fails a configured amount of checks then it will be added to the list of systems to report on via email notification from an Office365 account.
 
 ### Required Setup
 

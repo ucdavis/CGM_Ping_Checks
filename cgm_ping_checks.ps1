@@ -1,6 +1,6 @@
 <#
     Title: CGM_Ping_Checks.ps1
-    Authors: Taylor and Dean
+    Authors: Taylor McDougall and Dean Bunn
     Last Edit: 2021-08-12
 #>
 
@@ -50,7 +50,13 @@ if($nFailedSystemsCnt -gt 0)
                         <h3>CGM System Down Notice</h3>";
 
     #Array of CGM Techs Contacts
-    $CGMTechs = @("CGM Outage Notices <CGM-Outage-Notices@ad3.ucdavis.edu>");
+    $CGMTechs = @();
+
+    #Load CGM Techs
+    foreach($cgmTech in $cgm_config.receivers)
+    {
+        $CGMTechs += $cgmTech.address;
+    }
 
     #Read Password In
     $cgmPwd = cat .\specpass.txt | convertto-securestring;
@@ -76,3 +82,9 @@ if($nFailedSystemsCnt -gt 0)
 
 #Save CGM Config File
 $cgm_config | ConvertTo-Json | Out-File .\cgm_config.json;
+
+#Save CGM Config Backup Only If It Loaded Correctly
+if($cgm_config -ne $null -and [string]::IsNullOrEmpty($cgm_config.sender) -eq $false)
+{
+    $cgm_config | ConvertTo-Json | Out-File .\config_backup\cgm_config.json;
+};

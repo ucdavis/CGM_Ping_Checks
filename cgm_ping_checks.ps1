@@ -87,4 +87,4 @@ $cgm_config | ConvertTo-Json | Out-File .\cgm_config.json;
 if($cgm_config -ne $null -and [string]::IsNullOrEmpty($cgm_config.sender) -eq $false)
 {
     $cgm_config | ConvertTo-Json | Out-File .\config_backup\cgm_config.json;
-};
+}

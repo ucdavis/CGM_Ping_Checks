@@ -1,7 +1,7 @@
 <#
     Title: CGM_Ping_Checks.ps1
     Authors: Taylor McDougall and Dean Bunn
-    Last Edit: 2021-08-12
+    Last Edit: 2021-08-13
 #>
 
 #Import Json Configuration File
@@ -69,7 +69,7 @@ if($nFailedSystemsCnt -gt 0)
 
         if($cgmSystem.ping_status -eq "notify")
         {
-            $msgBody += "<p>" + $cgmSystem.name + " has failed ping</p>";   
+            $msgBody += "<p>" + $cgmSystem.displayname + " has failed ping</p>";   
         }
          
     }
@@ -77,7 +77,7 @@ if($nFailedSystemsCnt -gt 0)
     $msgBody += "<br /><br /><br /></body></html>";
 
     #Send Alert Email Message 
-    Send-MailMessage -SmtpServer $smtpServer -Port 587 -Credential $cgmCred -Subject $msgSubject -From $msgFrom -To $CGMTechs -Body $msgBody –BodyAsHtml -UseSsl;
+    Send-MailMessage -SmtpServer $smtpServer -Port 587 -Credential $cgmCred -Subject $msgSubject -From $msgFrom -To $CGMTechs -Body $msgBody â€“BodyAsHtml -UseSsl;
 }
 
 #Save CGM Config File

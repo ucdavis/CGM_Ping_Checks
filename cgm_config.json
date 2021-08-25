@@ -4,15 +4,36 @@
     "receivers":  [
                       {
                           "address":  "CGM-Outage-Notices@ad3.ucdavis.edu"
+                      },
+                      {
+                          "address":  "deanbunn@gmail.com"
                       }
                   ],
-    "max_fails":  3,
+    "max_fails":  5,
     "systems":  [
                     {
                         "displayname":  "Sump Pump",
                         "name":  "172.25.139.164",
                         "ping_status":  "success",
                         "ping_failed_count":  0
+                    },
+                    {
+                        "displayname":  "COE Wins",
+                        "name":  "coe-it-wins.ucdavis.edu",
+                        "ping_status":  "success",
+                        "ping_failed_count":  0
+                    },
+                    {
+                        "displayname":  "App Server",
+                        "name":  "webserverB.ucdavis.edu",
+                        "ping_status":  "failed",
+                        "ping_failed_count":  4
+                    },
+                    {
+                        "displayname":  "Box Automation Server",
+                        "name":  "coe-it-autobox.ucdavis.edu",
+                        "ping_status":  "notify",
+                        "ping_failed_count":  7
                     }
                 ]
 }

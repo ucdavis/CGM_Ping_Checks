@@ -7,6 +7,6 @@ A fun project to check the availability status of various systems. If a system f
 Passphrase for Office355 account must stored in a file called "specpass.txt" in the same directory as the script.
 
 ```powershell
-#Store encrypted password in secure file
+#Store encrypted password for cgmsurvey@ucdavis.edu in secure file
 Read-Host -AsSecureString | ConvertFrom-SecureString | Out-File .\specpass.txt
 ```

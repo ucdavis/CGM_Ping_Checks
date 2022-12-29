@@ -4,9 +4,9 @@ A fun project to check the availability status of various systems. If a system f
 
 ### Required Setup
 
-Passphrase for Office355 account must stored in a file called "specpass.txt" in the same directory as the script.
+Passphrase for Office355 account `cgminput` must be stored in a file called "specpass.txt" in the same directory as the script. The passphrase is in LastPass, folder "COE IT CGM".
 
 ```powershell
-#Store encrypted password for cgmsurvey@ucdavis.edu in secure file
+#Store encrypted password for cgmsurvey@ucdavis.edu (User ID: cgminput) in secure file
 Read-Host -AsSecureString | ConvertFrom-SecureString | Out-File .\specpass.txt
 ```
